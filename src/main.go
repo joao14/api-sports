@@ -22,5 +22,15 @@ func main() {
 		c.String(http.StatusOK, "%t", b)
 	})
 
+	r.GET("/player/:number", func(c *gin.Context) {
+		var name string
+		if c.Param("number") == "10" {
+			name = "Leonel Messi"
+		} else {
+			name = "Otros jugadores"
+		}
+		c.String(http.StatusOK, name)
+	})
+
 	r.Run(":8082")
 }

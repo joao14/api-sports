@@ -1,4 +1,4 @@
 FROM golang:alpine
-WORKDIR /go/src/myapp
-COPY . .
-RUN go build -o /go/bin/myapp src/main.go
+WORKDIR /src/
+COPY /src/main.go go.* /src/
+RUN go build -o /bin/app-sports
